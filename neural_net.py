@@ -3,7 +3,6 @@ import numpy as np
 nn_architecture = [
     {"input_dim": 2, "output_dim": 25, "activation": "relu"},
     {"input_dim": 25, "output_dim": 50, "activation": "relu"},
-    {"input_dim": 50, "output_dim": 50, "activation": "relu"},
     {"input_dim": 50, "output_dim": 25, "activation": "relu"},
     {"input_dim": 25, "output_dim": 1, "activation": "sigmoid"},
 ]

@@ -12,7 +12,7 @@ N_SAMPLES = 1000
 # ratio between training and test sets
 TEST_SIZE = 0.1
 
-X, y = make_moons(n_samples = N_SAMPLES, noise=0.2, random_state=100)
+X, y = make_moons(n_samples = N_SAMPLES, noise=0.2, random_state=76)
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=TEST_SIZE, random_state=42)
 
 def fit(x, y, arch, epochs, lr, verbose=False, callbacks=None, init_seed=2):
@@ -47,3 +47,6 @@ params_values, history = fit(np.transpose(X_train), np.transpose(y_train.reshape
 Y_test_hat, _ = full_fp(np.transpose(X_test), params_values, nn_architecture)
 acc_test = get_accuracy(Y_test_hat, np.transpose(y_test.reshape((y_test.shape[0], 1))))
 print("Test set accuracy: {:.2f} - David".format(acc_test))
+
+plt.plot(history[0])
+plt.show()
